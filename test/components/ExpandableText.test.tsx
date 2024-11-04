@@ -8,14 +8,15 @@ import ExapandableText from "../../src/components/ExapandbleText";
 import UserEvent from "@testing-library/user-event";
 
 describe("Expandable Text",()=>{
+    const text="a"
     const limit=255;
     const longText="a".repeat(limit +1);
     const truncatedText=longText.substring(0,255)+"..."
-    it("should render article without button when text less than 255",()=>{
+    it("should render text ",()=>{
+        
+        render(<ExapandableText text={text}/>)
        
-        render(<ExapandableText text={longText}/>)
-       
-        expect(screen.getByText(longText)).toBeInTheDocument();
+        expect(screen.getByText(text)).toBeInTheDocument();
         const button=screen.queryByRole("button");
         expect(button).not.toBeInTheDocument();
     });
