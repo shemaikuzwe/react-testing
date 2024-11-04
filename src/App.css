@@ -1,0 +1,18 @@
+.btn{
+    background:#646cff;
+    color:#fff;
+    padding:0.2rem 1rem;
+    border-radius:5px;
+    border:none;
+    cursor:pointer;
+    outline:none;
+}
+.btn:disabled{
+    background:#ccc;
+    cursor:not-allowed;
+}
+/* section{
+    display:flex;
+    flex-direction:column;
+    gap:2rem;
+} */
