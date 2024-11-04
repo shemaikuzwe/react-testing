@@ -3,10 +3,10 @@ name: CI
 on:
   push:
     branches:
-      - main  # Run on pushes to the main branch
+      - main # Run on pushes to the main branch
   pull_request:
     branches:
-      - main  # Run on pull requests to the main branch
+      - main # Run on pull requests to the main branch
 
 jobs:
   build:
@@ -19,14 +19,14 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'  # Specify your Node version
+          node-version: "18" # Specify your Node version
 
       - name: Install dependencies
         run: npm install
 
       - name: Run tests
-        run: npm test  # Ensure your test script is configured in package.json
+        run: npm test # Ensure your test script is configured in package.json
 
       - name: Build project
-        run: npm run build  # Ensure "build" script is set up in package.json
+        run: npm run build # Ensure "build" script is set up in package.json
 

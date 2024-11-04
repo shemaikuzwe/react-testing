@@ -11,9 +11,10 @@ describe("Terms and Conditions", () => {
     return {
       heading: screen.getByRole("heading"),
       check: screen.getByRole("checkbox"),
-      button: screen.getByRole("button", { name: /submit/i }),
+      button: screen.getByRole("button"),
     };
-  };
+  }
+
   it("should render corectly with iniitial state", () => {
     const { heading, check, button } = renderComponent();
     expect(heading).toHaveTextContent("Terms And conditions");
@@ -22,10 +23,9 @@ describe("Terms and Conditions", () => {
   });
 
   it("should enable button when checkbox is checked", async () => {
-    render(<TermsAndConditions />);
-    const{check,button}=renderComponent()
+    const { check, button } = renderComponent();
     const user = UserEvent.setup();
     await user.click(check);
     expect(button).toBeEnabled();
   });
-});
+})
